@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from controller.controller import Jobs
-from controller.controller import TakeJobs
+from controllers.jobs_controller import *
 import pymysql
 
 pymysql.install_as_MySQLdb()
