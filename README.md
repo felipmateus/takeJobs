@@ -29,6 +29,9 @@ The project is structured as follows:
   - Success: 200 OK
   - Failure: 500 Internal Server Error
 
+
+![Captura de Tela 2023-07-08 às 19 25 47](https://github.com/felipmateus/takeJobs/assets/76415936/947b83cc-d111-4f5e-bcf6-e474adadfde4)
+
 ### 2. Retrieve Job Data
 
 - **Endpoint**: `/jobs/<search>/<page>/<limit>`
@@ -38,7 +41,7 @@ The project is structured as follows:
   - Success: 200 OK with the job data in JSON format
   - Not Found: 404 Not Found if the job data is not available
 
-Please refer to the code and comments in the project files for more details about the implementation.
+![Captura de Tela 2023-07-08 às 19 26 24](https://github.com/felipmateus/takeJobs/assets/76415936/1ba4ecf9-f75c-447d-8a0e-7cc0d6499581)
 
 ## Running the Application
 
