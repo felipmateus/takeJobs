@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restful import Api
 from controllers.jobs_controller import *
 import pymysql
+import os
 
 pymysql.install_as_MySQLdb()
 
@@ -10,7 +11,9 @@ api = Api(app)
 
 # pymysql.install_as_MySQLdb()
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:lala102030@localhost:3306/teste"
+db_password = os.environ.get('DB_PASSWORD')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://root:{db_password}@localhost:3306/teste"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS '] = False
 app.config["SQLALCHEMY_ECHO"] = True
 app.config["SQLALCHEMY_RECORD_QUERIES"] = True
