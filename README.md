@@ -6,12 +6,24 @@ This documentation provides an overview of the RESTful Flask application project
 
 The project is structured as follows:
 
-- app/
-    - controllers/
-        - jobs_controller.py
-    - models/
-        - jobs_model.py
-    - main.py
+- src/
+    - async_app/
+        - app.py
+        - Dockerfile
+    - sync_app/
+        - bots/
+            - takeJobs
+        - controllers/
+            - jobs_controller.py
+        - models/
+            - jobs_models.py
+        - views/
+            - home/
+                - index.html
+            - table_ws
+                - index.html 
+        - app.py
+    
 
 - The `app` directory contains the source code of the application.
 - The `controllers` directory holds the controllers responsible for handling requests and managing the business logic.
@@ -20,19 +32,31 @@ The project is structured as follows:
 
 ## Endpoints
 
-### 1. Extract Job Data
+### 1. Home page
+= **Endpoint** `/home`
+- **HTTP**
+- **Response**
+  - Sucess: 200 OK
+  - Not Found: Failed to load home page
+
+ <img width="667" alt="Captura de Tela 2023-07-18 às 14 30 25" src="https://github.com/felipmateus/takeJobs/assets/76415936/9ea2f6fe-6d00-4424-9dc4-5d861389be89">
+   
+
+
+
+### 2. Extract Job Data
 
 - **Endpoint**: `/jobs/<search>`
-- **HTTP Method**: GET
+- **Websocket**:
 - **Description**: Extracts job data using bots based on the provided search parameter.
 - **Response**: 
   - Success: 200 OK
   - Failure: 500 Internal Server Error
 
+<img width="1149" alt="Captura de Tela 2023-07-18 às 14 30 16" src="https://github.com/felipmateus/takeJobs/assets/76415936/bb8b4aef-9459-4099-8c94-1a634d850849">
 
-![Captura de Tela 2023-07-08 às 19 25 47](https://github.com/felipmateus/takeJobs/assets/76415936/947b83cc-d111-4f5e-bcf6-e474adadfde4)
 
-### 2. Retrieve Job Data
+### 3. Retrieve Job Data
 
 - **Endpoint**: `/jobs/<search>/<page>/<limit>`
 - **HTTP Method**: GET
@@ -53,7 +77,7 @@ To run the application, follow these steps:
 - pip install -r requirements.txt
 - python main.py
 
-3. Access the application at `http://localhost:5000`.
+3. Access the application at `http://localhost:3001`.
 
 ## Conclusion
 
