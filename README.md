@@ -38,9 +38,9 @@ The project is structured as follows:
 - **Response**
   - Sucess: 200 OK
   - Not Found: Failed to load home page
-
- <img width="667" alt="Captura de Tela 2023-07-18 às 14 30 25" src="https://github.com/felipmateus/takeJobs/assets/76415936/9ea2f6fe-6d00-4424-9dc4-5d861389be89">
    
+<img width="598" alt="Captura de Tela 2023-07-18 às 14 36 06" src="https://github.com/felipmateus/takeJobs/assets/76415936/e727bd22-3143-454a-b847-dfc02be19588">
+
 
 
 
@@ -56,6 +56,8 @@ The project is structured as follows:
 <img width="1149" alt="Captura de Tela 2023-07-18 às 14 30 16" src="https://github.com/felipmateus/takeJobs/assets/76415936/bb8b4aef-9459-4099-8c94-1a634d850849">
 
 
+
+
 ### 3. Retrieve Job Data
 
 - **Endpoint**: `/jobs/<search>/<page>/<limit>`
@@ -66,6 +68,10 @@ The project is structured as follows:
   - Not Found: 404 Not Found if the job data is not available
 
 ![Captura de Tela 2023-07-08 às 19 26 24](https://github.com/felipmateus/takeJobs/assets/76415936/1ba4ecf9-f75c-447d-8a0e-7cc0d6499581)
+
+
+
+
 
 ## Running the Application
 
