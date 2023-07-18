@@ -11,6 +11,6 @@ COPY . .
 RUN python3 -m pip install -r requirements.txt
 
 
-EXPOSE 8765
+EXPOSE 3001
 
 CMD ["python3", "app.py"]

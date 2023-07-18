@@ -96,9 +96,6 @@ class TakejobsPipeline:
             self.conn.commit()
 
             # await self.websocket.send(json.dumps(dict(item)))  # Modify as per your item structure
-
-        
-      
                 
         return item
 

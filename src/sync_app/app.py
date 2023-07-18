@@ -17,10 +17,10 @@ api = Api(app)
 # pymysql.install_as_MySQLdb()
 DB_NAME = "teste"
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
-DB_PATH = "localhost"
+DB_PATH = "host.docker.internal"
 
-                            
-app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://root:{DB_PASSWORD}@{DB_PATH}:3306/{DB_NAME}"
+                       
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://root:lala102030@{DB_PATH}:3306/{DB_NAME}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS '] = False
 app.config["SQLALCHEMY_ECHO"] = True
 app.config["SQLALCHEMY_RECORD_QUERIES"] = True

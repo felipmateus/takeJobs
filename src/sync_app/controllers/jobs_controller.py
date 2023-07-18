@@ -13,11 +13,14 @@ class Home(Resource):
 class Jobs(Resource):
     def get(self, search):
 
-        DOCKER_PATH = '/app/bot/takeJobs'
+        DOCKER_PATH = '/app/bots/takeJobs'
         LOCAL_PATH = '/Users/felipemateusdecarvalho/Documents/developer_project/Projetos_back_end/takeJobs/src/sync_app/bots/takeJobs'
 
+        
+
         try:
-            subprocess.run(f'scrapy crawl vagas -a search={search} -o jobs.json', cwd=LOCAL_PATH, shell=True)
+            subprocess.Popen(f'scrapy crawl vagas -a search={search}', cwd=LOCAL_PATH, shell=True)
+            subprocess.Popen(f'scrapy crawl infojobs -a search={search}', cwd=LOCAL_PATH, shell=True)
         except Exception:
             abort(500, message='Failed to execute job search.')  # Retorna erro 500 com mensagem personalizada
 

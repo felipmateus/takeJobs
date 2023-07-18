@@ -69,7 +69,9 @@ ITEM_PIPELINES = {
 
 USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
 
+# WEBSOCKET_SERVER_URL = 'ws://host.docker.internal:8765'
 WEBSOCKET_SERVER_URL = 'ws://localhost:8765'
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
