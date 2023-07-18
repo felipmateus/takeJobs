@@ -14,3 +14,4 @@ class TakejobsItem(Item):
     local = Field()
     date = Field()
     site = Field()
+    link = Field()

@@ -3,7 +3,6 @@ from takeJobs.items import TakejobsItem
 
 class InfojobsSpider(scrapy.Spider):
     name = "infojobs"
-    search = "Vendedor"
     next_page = 1
 
     def start_requests(self):
@@ -44,6 +43,12 @@ class InfojobsSpider(scrapy.Spider):
 
 
             vaga_item['site'] = "Infojobs"
+
+            link = vaga.xpath('.//a[@class="text-decoration-none"]//@href').get(),
+            if link[0] is not None:
+                vaga_item['link'] = "https://www.infojobs.com.br/" + link[0].strip()
+            else:
+                vaga_item['link'] = "Não encontrado"
 
             yield vaga_item
 

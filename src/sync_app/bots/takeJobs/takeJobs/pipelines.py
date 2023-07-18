@@ -40,6 +40,7 @@ class TakejobsPipeline:
         local VARCHAR(255),
         date VARCHAR(255),
         site VARCHAR(255),
+        link VARCHAR(255),
         date_extracted TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id)
         )
@@ -85,12 +86,13 @@ class TakejobsPipeline:
             pass
         else:
             ##Define insert statament & Insert item
-            self.cur.execute(""" insert into scrapy_vagas (title, description, local, date, site) values (%s,%s,%s,%s,%s) """, (
+            self.cur.execute(""" insert into scrapy_vagas (title, description, local, date, site, link) values (%s,%s,%s,%s,%s,%s) """, (
                 str(item["title"]),
                 str(item["description"]),
                 str(item["local"]),
                 str(item["date"]),
-                str(item["site"])
+                str(item["site"]),
+                str(item["link"])
             ))
 
             self.conn.commit()
