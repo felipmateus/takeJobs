@@ -1,6 +1,6 @@
 # Take Job Documentation
 
-This documentation provides an overview of the RESTful Flask application project based on the MVC (Model-View-Controller) architecture. The project consists of two main routes: one for extracting job data using bots and another for retrieving data directly from the database. The code follows best practices to ensure better readability and maintainability.
+This documentation provides an overview of the RESTfull Flask application project based on the MVC (Model-View-Controller) architecture. The project consists of two main routes: one for extracting job data using bots and another for retrieving data directly from the database. The code follows best practices to ensure better readability and maintainability.
 
 ## Project Structure
 
@@ -12,7 +12,8 @@ The project is structured as follows:
         - Dockerfile
     - sync_app/
         - bots/
-            - takeJobs
+            - takeJobs/
+                - Scrapy 
         - controllers/
             - jobs_controller.py
         - models/
@@ -23,6 +24,7 @@ The project is structured as follows:
             - table_ws
                 - index.html 
         - app.py
+        - Dockerfile
     
 
 - The `app` directory contains the source code of the application.
@@ -34,7 +36,7 @@ The project is structured as follows:
 
 ### 1. Home page
 = **Endpoint** `/home`
-- **HTTP**
+- **HTTP Method**: GET
 - **Response**
   - Sucess: 200 OK
   - Not Found: Failed to load home page
@@ -42,27 +44,44 @@ The project is structured as follows:
 <img width="598" alt="Captura de Tela 2023-07-18 às 14 36 06" src="https://github.com/felipmateus/takeJobs/assets/76415936/e727bd22-3143-454a-b847-dfc02be19588">
 
 
+## 2. html table websocket
+
+- **Endpoint**: `/takejobsocket`
+- **HTTP Method**: GET
+- **Description**: Return html table with websocket script connection to server
+- **Response**:
+  - Sucess: 200 OK
+  - Failure: 404 Failed to load table page
 
 
-### 2. Extract Job Data
+
+
+### 3. Extract Job Data
 
 - **Endpoint**: `/jobs/<search>`
-- **Websocket**:
-- **Description**: Extracts job data using bots based on the provided search parameter.
+- **HTTP Method**: GET
+- **Description**: Extracts job data using bots based on the provided search parameter
 - **Response**: 
   - Success: 200 OK
-  - Failure: 500 Internal Server Error
+  - Failure: 404 Jobs not found
+
+
+
+### 4. Load items in real time
+
+- **Endpoint**:
+- **Websocket**
+- **Description**: Create to show the user how fast framework scrapy can take information from web
 
 <img width="1149" alt="Captura de Tela 2023-07-18 às 14 30 16" src="https://github.com/felipmateus/takeJobs/assets/76415936/bb8b4aef-9459-4099-8c94-1a634d850849">
 
 
 
-
-### 3. Retrieve Job Data
+### 4. Retrieve Job Data
 
 - **Endpoint**: `/jobs/<search>/<page>/<limit>`
 - **HTTP Method**: GET
-- **Description**: Retrieves job data from the database based on the provided search, page, and limit parameters.
+- **Description**: Retrieves job data from the database based on the provided search, page, and limit parameters
 - **Response**: 
   - Success: 200 OK with the job data in JSON format
   - Not Found: 404 Not Found if the job data is not available
